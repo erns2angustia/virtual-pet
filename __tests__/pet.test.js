@@ -1,3 +1,4 @@
+const { it } = require('node:test');
 const Pet = require('./src/pet');
 describe('constructor', () => {
     it('returns an object', () => {
@@ -31,5 +32,13 @@ describe('constructor', () => {
       expect(pet.age).toEqual(1);
       expect(pet.hunger).toEqual();
       expect(pet.fitness).toEqual();
+    });
+  });
+
+  describe('feed', () => {
+    it('reduces hunger by 3', () => {
+      const pet = new Pet('Fido');
+      pet.feed();
+      expect(pet.hunger).toEqual();
     });
   });
