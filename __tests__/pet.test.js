@@ -14,6 +14,12 @@ describe('constructor', () => {
     
         expect(pet.age).toEqual(0);
       });
+
+      it('increases fitness by to a maximum of 10', () => {
+        const pet = new Pet('fido');
+        pet.fitness = 8;
+        pet.walk();
+        expect(pet.fitness).toEqual(10);
   });
 
   describe('growUp', () => {
