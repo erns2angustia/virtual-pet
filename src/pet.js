@@ -25,5 +25,19 @@ function Pet(name) {
         this.hunger = MINIMUM_HUNGER;
       }
     };
+    Pet.prototype.checkUp = function () {
+      if ((this.fitness <= 3)) {
+        console.log('I need a walk.');
+      }
+      if ((this.hunger >= 5)) {
+        console.log('I am hungry.');
+      }
+      if ((this.fitness <=3) && (this.hunger >=5)) {
+        console.log('I am hungry AND I need a walk.');
+      }
+      if ((this.fitness >4) && (this.hunger <5)) {
+        console.log('I feel great!');
+      }
+    };
 module.exports = Pet;
 
