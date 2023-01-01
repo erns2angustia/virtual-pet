@@ -18,7 +18,7 @@ function Pet(name) {
   }
     Pet.prototype.growUp = function() {
       if (!this.isAlive) {
-        console.log(petDied);
+        throw new Error('Your pet died');
       } 
       else {
       this.age += 1;
@@ -28,7 +28,7 @@ function Pet(name) {
     };
     Pet.prototype.walk = function() {
       if (!this.isAlive) {
-        console.log(petDied);
+        throw new Error('Your pet died');
       }
       else {
       if ((this.fitness + 4) <= MAXIMUM_FITNESS) {
@@ -40,7 +40,7 @@ function Pet(name) {
     };
     Pet.prototype.feed = function () {
       if (!this.isAlive) {
-        console.log(petDied);
+        throw new Error('Your pet died');
       }
       else {
       if ((this.hunger -3) >= MINIMUM_HUNGER) {
