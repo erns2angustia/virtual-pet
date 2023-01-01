@@ -55,6 +55,11 @@ describe('constructor', () => {
     it('returns if your pet is alive', () => {
       const pet = new Pet('Fido');
       expect(pet.isAlive).toEqual(true);
+      pet.growUp();
+      pet.growUp();
+      pet.growUp();
+      pet.growUp();
+      expect(pet.isAlive).toEqual(false);
     });
   });
 });
