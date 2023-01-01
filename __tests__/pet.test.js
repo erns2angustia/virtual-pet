@@ -1,5 +1,4 @@
-const { it, describe } = require('node:test');
-const Pet = require('./src/pet');
+const Pet = require('../src/pet');
 describe('constructor', () => {
     it('returns an object', () => {
       expect(new Pet()).toBeInstanceOf(Object);
@@ -29,22 +28,33 @@ describe('constructor', () => {
       pet.growUp();
   
       expect(pet.age).toEqual(1);
-      expect(pet.hunger).toEqual();
-      expect(pet.fitness).toEqual();
+      expect(pet.hunger).toEqual(5);
+      expect(pet.fitness).toEqual(7);
     });
   });
 
   describe('feed', () => {
     it('reduces hunger by 3', () => {
       const pet = new Pet('Fido');
+      pet.growUp();
+      expect(pet.hunger).toEqual(5);
       pet.feed();
-      expect(pet.hunger).toEqual();
+      expect(pet.hunger).toEqual(2);
     });
   });
-  describe('petCheckup', () => {
+  describe('checkUp', () => {
     it('returns what the pet is feeling', () => {
       const pet = new Pet('Fido');
+      pet.growUp();
+      expect(pet.hunger).toEqual(5);
       pet.checkUp();
-      expect(pet.checkUp).toEqual('');
+      expect(pet.checkUp()).toBe('I am hungry.');
     });
   });
+  describe('isAlive', () => {
+    it('returns if your pet is alive', () => {
+      const pet = new Pet('Fido');
+      expect(pet.isAlive).toEqual(true);
+    });
+  });
+});
