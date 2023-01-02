@@ -10,6 +10,7 @@ function Pet(name) {
     this.fitness = 10;
     this.hunger = 0;
     this.isAlive = true;
+    this.babies = [];
     }
     Pet.prototype = {
       get isAlive () {
@@ -69,5 +70,8 @@ function Pet(name) {
       }
       }
     };
+    Pet.prototype.haveBaby = function (baby) {
+      this.babies.push(baby);
+    }
 module.exports = Pet;
 

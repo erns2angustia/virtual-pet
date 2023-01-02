@@ -71,4 +71,11 @@ describe('constructor', () => {
       expect(pet.isAlive).toEqual(false);
     });
   });
+  describe('haveBaby', () => {
+    it('returns pet babies list', () => {
+      const parent = new Pet('Fido');
+      parent.haveBaby('James');
+      expect(parent.babies[0]).toEqual('James');
+    });
+  });
 });
